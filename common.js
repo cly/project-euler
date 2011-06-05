@@ -38,8 +38,27 @@ var isPalindrome = function isPalindrome(n){
   return true;
 };
 
+
+function sumSquares(n){
+  var sum = 0;
+  for(var i = 1, ii = n; i <= ii; ++i){
+    sum += Math.pow(i, 2);
+  }
+  return sum;
+}
+
+function sum(n){
+  var s = 0;
+  for(var i = 1, ii = n; i <= ii; ++i){
+    s += i;
+  }
+  return s;
+}
+
 module.exports = {
   getFactors:getFactors,
   getFactorCounts:getFactorCounts,
-  isPalindrome:isPalindrome
+  isPalindrome:isPalindrome,
+  sumSquares:sumSquares,
+  sum:sum
 };
