@@ -1,12 +1,12 @@
 //utility methods as a results of answer other questions
 
-function getFactors(currTarget){
+function getFactors(n){
   var i = 2,
       factors = [];
 
-  while(currTarget > 1){
-    if(currTarget % i === 0){
-      currTarget /= i;
+  while(n > 1){
+    if(n % i === 0){
+      n /= i;
       factors.push(i);
     }
     else {
