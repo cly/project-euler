@@ -27,7 +27,19 @@ function getFactorCounts(factors){
   return factorCounts;
 }
 
+var isPalindrome = function isPalindrome(n){
+  var i, l;
+  n += '';
+  for(i = 0, l = n.length - 1; i <= l - i; ++i){
+    if(n[i] !== n[l - i]){
+      return false;
+    }
+  }
+  return true;
+};
+
 module.exports = {
   getFactors:getFactors,
-  getFactorCounts:getFactorCounts
+  getFactorCounts:getFactorCounts,
+  isPalindrome:isPalindrome
 };
