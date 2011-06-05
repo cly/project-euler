@@ -2,28 +2,14 @@
 //
 //What is the largest prime factor of the number 600851475143 ?
 
-var target = 600851475143;
+var common = require('./common.js');
+
+var target = 600851475143,
+    factors = [];
 
 //600 billion, try all numbers = fail
-//try all numbers but divide by that number maybe ok?
-function getFactors(currTarget){
-  var i = 2,
-      factors = [];
-
-  while(currTarget > 1){
-    if(currTarget % i === 0){
-      currTarget /= i;
-      factors.push(i);
-    }
-    else {
-      ++i;
-    }
-  }
-  return factors;
-}
-
-getFactors(target);
+//try all numbers but divide by that number maybe ok? - basically find factors
+factors = common.getFactors(target);
 console.log(target);
-console.log(currTarget);
 console.log(factors);
 console.log(factors.pop());
