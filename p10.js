@@ -7,7 +7,8 @@
 var common = require('./common.js');
 var MAX = 2000000;
 var primes = [];
-var j;
+var i, ii, j;
+
 for(var i = 2, ii = MAX; i < ii; ++i){
   primes[i] = i;
 }
@@ -16,10 +17,10 @@ for(var i = 2, ii = MAX; i < ii; ++i){
   if(typeof primes[i] === 'undefined'){
     continue;
   }
-  j = i;
+  j = i << 1;
   while(j < MAX){
-    j += i;
     delete primes[j];
+    j += i;
   } 
 }
 
