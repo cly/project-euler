@@ -4,7 +4,6 @@
 //
 //answer: 142913828922
 
-var common = require('./common.js');
 var MAX = 2000000;
 var primes = [];
 var i, ii, j;
