@@ -7,7 +7,6 @@
 
 var common = require('./common.js');
 
-
 (function(){
   var MIN = 1,
       MAX = 20,
@@ -16,7 +15,7 @@ var common = require('./common.js');
       factor,
       tempFactorCounts;
   for(var i = MIN, ii = MAX; i <= ii; --ii){
-    factors = common.getFactors(ii);
+    factors = common.getPrimeFactors(ii);
     tempFactorCounts = common.getFactorCounts(factors);
 
     for(factor in tempFactorCounts){
@@ -39,5 +38,3 @@ var common = require('./common.js');
   }
   console.log(result);
 }());
-
-

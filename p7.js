@@ -10,9 +10,8 @@ var ith = 10001;
 var i = 0;
 while(1){
   ++i;
-  if(common.getFactors(i).length === 1){
+  if(common.getPrimeFactors(i).length === 1){
     numPrimes += 1;
-    //console.log(numPrimes + 'th prime: ' + i);
   }
   if(numPrimes === ith){
     console.log(ith + 'th prime: ' + i);

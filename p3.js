@@ -11,7 +11,7 @@ var target = 600851475143,
 
 //600 billion, try all numbers = fail
 //try all numbers but divide by that number maybe ok? - basically find factors
-factors = common.getFactors(target);
+factors = common.getPrimeFactors(target);
 console.log(target);
 console.log(factors);
 console.log(factors.pop());

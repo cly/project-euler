@@ -1,8 +1,9 @@
 //utility methods as a results of answer other questions
 
-function getFactors(n){
+function getPrimeFactors(nOrig){
   var i = 2,
-      factors = [];
+      factors = [],
+      n = nOrig;
 
   while(n > 1){
     if(n % i === 0){
@@ -80,12 +81,73 @@ function isPrime(n){
   return true;
 }
 
+function _incrComb(comb){
+  return false;
+/*
+  while(index > 0){
+    if(comb[index] < ii - 1){
+      comb[index] += 1;
+    }
+    else{
+      --index;
+    }
+  }
+*/
+}
+
+function divisors(n){
+  var factors = getPrimeFactors(n);
+  var i, ii;
+  var result = [];
+  for(i = 0, ii = factors.length; i < ii; ++i){
+    result.push(factors[i]);
+  }
+  if(result[0] !== 1){
+    result.unshift(1);
+  }
+  if(result[result.length - 1] !== n){
+    result.push(n);
+  }
+  console.log(result);
+  for(i = 2, ii = factors.length; i < ii; ++i){
+    var comb = [];
+    var index = i - 1;
+
+    //initialize
+    for(var j = 0, jj = i; j < jj; ++j){
+      comb[j] = j;
+    }
+
+    var more = true;
+    while(more){
+      more = _incrComb(comb);
+      console.log(comb);
+      //use comb
+    }
+  }
+  console.log('hh', n, result);
+
+  return result;
+  
+  //console.log(n, n, factors);
+/*
+  var result = [];
+  for(var i = 1, ii = n; i <= ii; ++i){
+    if(n % i === 0){
+      result.push(i);
+    }
+  }
+  return result;
+*/
+}
+
 module.exports = {
-  getFactors:getFactors,
+  getPrimeFactors:getPrimeFactors,
   getFactorCounts:getFactorCounts,
   isPalindrome:isPalindrome,
   sumSquares:sumSquares,
   sum:sum,
   isInt:isInt,
-  isPrime:isPrime
+  isPrime:isPrime,
+  divisors:divisors
 };
