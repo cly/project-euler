@@ -46,6 +46,8 @@ var maxProduct = 0;
 var tempProduct = 1;
 var NUM = 4;
 var MAX = 20;
+var tempRow;
+var tempVal;
 
 function findMax(rowf, colf){
   var maxProduct = 0;
@@ -53,8 +55,12 @@ function findMax(rowf, colf){
     col:for(var c = 0, cc = MAX; c < cc; ++c){
       tempProduct = 1;
       for(var k = 3, kk = 0; k >= kk; --k){
-        if(typeof mat[rowf(r,k)] !== 'undefined' && typeof mat[rowf(r,k)][colf(c,k)] !== 'undefined'){
-          tempProduct *= mat[rowf(r,k)][colf(c,k)];
+        tempRow = mat[rowf(r,k)];
+        if(typeof tempRow !== 'undefined'){
+          tempVal = tempRow[colf(c,k)];
+        }
+        if(tempRow !== 'undefined' && tempVal !== 'undefined'){
+          tempProduct *= tempVal;
         }
         else{
           continue col;
