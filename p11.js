@@ -47,7 +47,7 @@ var tempProduct = 1;
 var NUM = 4;
 var MAX = 20;
 var tempRow;
-var tempVal;
+var tempCol;
 
 function findMax(rowf, colf){
   var maxProduct = 0;
@@ -55,12 +55,10 @@ function findMax(rowf, colf){
     col:for(var c = 0, cc = MAX; c < cc; ++c){
       tempProduct = 1;
       for(var k = 3, kk = 0; k >= kk; --k){
-        tempRow = mat[rowf(r,k)];
-        if(typeof tempRow !== 'undefined'){
-          tempVal = tempRow[colf(c,k)];
-        }
-        if(tempRow !== 'undefined' && tempVal !== 'undefined'){
-          tempProduct *= tempVal;
+        tempRow = rowf(r,k);
+        tempCol = colf(c,k);
+        if(tempRow < MAX && tempRow >= 0 && tempCol < MAX && tempCol >= 0){
+          tempProduct *= mat[tempRow][tempCol];
         }
         else{
           continue col;
