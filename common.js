@@ -55,10 +55,37 @@ function sum(n){
   return s;
 }
 
+function isInt(n){
+  if(!isNaN(n) && parseFloat(n, 10) === parseInt(n, 10)){
+    return true;
+  }
+  return false;
+}
+
+function isPrime(n){
+  if(typeof n === 'undefined'){
+    return false;
+  }
+  if(n < 2){
+    return false;
+  }
+  var i = 2;
+  var max = n/2;
+  while(i <= max){
+    if(n % i === 0){
+      return false;
+    }
+    ++i;
+  }
+  return true;
+}
+
 module.exports = {
   getFactors:getFactors,
   getFactorCounts:getFactorCounts,
   isPalindrome:isPalindrome,
   sumSquares:sumSquares,
-  sum:sum
+  sum:sum,
+  isInt:isInt,
+  isPrime:isPrime
 };
